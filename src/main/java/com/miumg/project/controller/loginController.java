@@ -20,9 +20,9 @@ public class loginController extends HttpServlet {
         String auth = request.getParameter("auth");
 
         if ("login".equals(auth)) {
-            this.login(request, response);
+            login(request, response);
         } else if ("logout".equals(auth)) {
-            this.logout(request, response);
+            logout(request, response);
         }
     }
 

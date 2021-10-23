@@ -14,18 +14,17 @@ public class reportController extends HttpServlet {
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/csv");
-        response.setHeader("Content-Disposition", "attachment; filename=\"Reporte.csv\"");
+        response.setHeader("Content-Disposition", "attachment; filename=\"ReporteUsuarios.csv\"");
 
-        response.setContentType("text/csv");
         String create = request.getParameter("create");
 
         if("generate".equals(create)){
             ReportExecutionManager reportExecutionManager = new ReportExecutionManager();
-            reportExecutionManager.createdReport(response);
+            reportExecutionManager.createReport(response);
 
             response.sendRedirect("show.jsp");
-            System.out.println("Ok");
         }else{
+            request.setAttribute("message", "No se pudo generar el reporte");
             System.out.println("Fuck");
         }
     }

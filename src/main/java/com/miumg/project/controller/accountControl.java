@@ -51,7 +51,6 @@ public class accountControl extends HttpServlet {
             requestDispatcher = request.getRequestDispatcher("show.jsp");
             List<PersonalDocumentEntity> clientList = bancoExecutionManager.clientList();
             request.setAttribute("lista", clientList);
-            request.setAttribute("list", product);
 
         }else if("update".equals(action)){
             requestDispatcher = request.getRequestDispatcher("view/modify.jsp");

@@ -17,7 +17,7 @@ public class ReportExecutionManager {
         connection = connectionDatabase.getConnection();
     }
 
-    public boolean createdReport(HttpServletResponse response){
+    public boolean createReport(HttpServletResponse response){
         PreparedStatement preparedStatement;
         ResultSet resultSet;
 
