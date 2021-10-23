@@ -1,4 +1,4 @@
-package com.miumg.project.model;
+package com.miumg.project.model.personData;
 
 import javax.persistence.*;
 
@@ -7,8 +7,18 @@ import javax.persistence.*;
 public class ProductoEntity {
     private int productId;
     private String product;
-    private Integer amount;
+    private String amount;
     private String currency;
+
+    public ProductoEntity(int productId, String product, String amount, String currency) {
+        this.productId = productId;
+        this.product = product;
+        this.amount = amount;
+        this.currency = currency;
+    }
+
+    public ProductoEntity() {
+    }
 
     @Id
     @Column(name = "productId")
@@ -32,11 +42,11 @@ public class ProductoEntity {
 
     @Basic
     @Column(name = "amount")
-    public Integer getAmount() {
+    public String getAmount() {
         return amount;
     }
 
-    public void setAmount(Integer amount) {
+    public void setAmount(String amount) {
         this.amount = amount;
     }
 

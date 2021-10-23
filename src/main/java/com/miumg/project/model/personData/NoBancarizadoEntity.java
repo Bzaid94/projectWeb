@@ -1,4 +1,4 @@
-package com.miumg.project.model;
+package com.miumg.project.model.personData;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

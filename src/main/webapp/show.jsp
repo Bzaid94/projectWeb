@@ -7,7 +7,7 @@
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="main.css">
     <title>Banco</title>
 </head>
 <div class="container">
@@ -32,11 +32,11 @@
     <table class="table table-bordered" width="50%">
         <thead>
         <tr>
-            <th scope="col"># Cuenta</th>
             <th scope="col">Nombre</th>
+            <th scope="col">Segundo Nombre</th>
             <th scope="col">Apellido</th>
+            <th scope="col">Segundo Apellido</th>
             <th scope="col">DPI</th>
-            <th scope="col">Dirección</th>
             <th></th>
             <th></th>
         </tr>
@@ -53,14 +53,21 @@
                 <td>
                     <a href="account-control?action=update&profileId=<c:out value="${cliente.profileId}"/>">Modificar</a>
                 </td>
-                <td><a onclick="showAlert()"
-                       href="account-control?action=delete&profileId=<c:out value="${cliente.profileId}"/>">Eliminar</a>
+                <td>
+                    <a href="account-control?action=delete&profileId=<c:out value="${cliente.profileId}"/>">Eliminar</a>
                 </td>
             </tr>
 
         </c:forEach>
         </tbody>
     </table>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+        <br/>
+        <a class="btn btn-info" href="report-Controller?create=generate" role="button">Generar Reporte</a>
+        <br/>
+    </div>
+
     </body>
 </div>
 </html>

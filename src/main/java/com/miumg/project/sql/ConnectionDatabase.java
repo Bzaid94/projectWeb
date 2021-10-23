@@ -22,12 +22,4 @@ public class ConnectionDatabase {
             return null;
         }
     }
-
-    public void closeConnection(Connection connection){
-        try{
-            connection.close();
-        } catch (SQLException e) {
-            System.out.println(e.getClass().getSimpleName() + "_" + e.getMessage());
-        }
-    }
 }
